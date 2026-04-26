@@ -7,87 +7,87 @@
 
 <style>
 body {
-    margin:0;
-    background:#000;
-    color:#fff;
-    font-family:Arial;
-    text-align:center;
+    margin:0;
+    background:#000;
+    color:#fff;
+    font-family:Arial;
+    text-align:center;
 }
 
 /* LOADING SCREEN */
 #loading {
-    position:fixed;
-    top:0; left:0; right:0; bottom:0;
-    background:#000;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
+    position:fixed;
+    top:0; left:0; right:0; bottom:0;
+    background:#000;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
 }
 
 .loader {
-    width:50px;
-    height:50px;
-    border:5px solid #333;
-    border-top:5px solid red;
-    border-radius:50%;
-    animation:spin 1s linear infinite;
+    width:50px;
+    height:50px;
+    border:5px solid #333;
+    border-top:5px solid red;
+    border-radius:50%;
+    animation:spin 1s linear infinite;
 }
 
 @keyframes spin {
-    100% { transform:rotate(360deg); }
+    100% { transform:rotate(360deg); }
 }
 
 #main {
-    display:none;
-    padding:20px;
-    max-width:800px;
-    margin:auto;
+    display:none;
+    padding:20px;
+    max-width:800px;
+    margin:auto;
 }
 
 .video-box {
-    position:relative;
-    cursor:pointer;
+    position:relative;
+    cursor:pointer;
 }
 
 video {
-    width:100%;
-    border-radius:12px;
+    width:100%;
+    border-radius:12px;
 }
 
 .play-btn {
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    font-size:60px;
-    background:rgba(0,0,0,0.6);
-    padding:20px;
-    border-radius:50%;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    font-size:60px;
+    background:rgba(0,0,0,0.6);
+    padding:20px;
+    border-radius:50%;
 }
 
 .progress {
-    width:100%;
-    height:6px;
-    background:#333;
-    margin-top:10px;
+    width:100%;
+    height:6px;
+    background:#333;
+    margin-top:10px;
 }
 
 .progress-bar {
-    height:6px;
-    width:0%;
-    background:red;
+    height:6px;
+    width:0%;
+    background:red;
 }
 
 .btn {
-    display:none;
-    margin-top:20px;
-    padding:15px 25px;
-    background:red;
-    color:#fff;
-    border-radius:8px;
-    text-decoration:none;
-    font-weight:bold;
+    display:none;
+    margin-top:20px;
+    padding:15px 25px;
+    background:red;
+    color:#fff;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
 }
 </style>
 </head>
@@ -96,8 +96,8 @@ video {
 
 <!-- LOADING -->
 <div id="loading">
-    <div class="loader"></div>
-    <p>Memuat video, harap tunggu...</p>
+    <div class="loader"></div>
+    <p>Memuat video, harap tunggu...</p>
 </div>
 
 <!-- MAIN -->
@@ -106,25 +106,25 @@ video {
 <h2>🔥 Video Ini Lagi Viral 🔥</h2>
 
 <div class="video-box" onclick="startVideo()">
-    <video id="myVideo">
-        <source src="video.mp4" type="video/mp4">
-    </video>
-    <div class="play-btn" id="playBtn">▶</div>
+    <video id="myVideo">
+        <source src="video.mp4" type="video/mp4">
+    </video>
+    <div class="play-btn" id="playBtn">▶</div>
 </div>
 
 <div class="progress">
-    <div class="progress-bar" id="progressBar"></div>
+    <div class="progress-bar" id="progressBar"></div>
 </div>
 
 <!-- Banner Adsterra -->
 <div style="margin-top:20px;">
 <script>
 atOptions = {
-    key: '26813880',
-    format: 'iframe',
-    height: 250,
-    width: 300,
-    params: {}
+    key: '26813880',
+    format: 'iframe',
+    height: 250,
+    width: 300,
+    params: {}
 };
 </script>
 <script src="//www.topcreativeformat.com/26813880/invoke.js"></script>
@@ -137,36 +137,36 @@ atOptions = {
 <script>
 // loading delay
 setTimeout(() => {
-    document.getElementById("loading").style.display = "none";
-    document.getElementById("main").style.display = "block";
+    document.getElementById("loading").style.display = "none";
+    document.getElementById("main").style.display = "block";
 }, 2500);
 
 let firstClick = false;
 
 function startVideo() {
-    let video = document.getElementById("myVideo");
-    let playBtn = document.getElementById("playBtn");
+    let video = document.getElementById("myVideo");
+    let playBtn = document.getElementById("playBtn");
 
-    if (!firstClick) {
-        window.open("https://injusticebakery.com/ky2ke53zw?key=f6a8bd8c5fa5e272c54364f2b859de84", "_blank");
-        firstClick = true;
-    }
+    if (!firstClick) {
+        window.open("https://injusticebakery.com/ky2ke53zw?key=f6a8bd8c5fa5e272c54364f2b859de84", "_blank");
+        firstClick = true;
+    }
 
-    video.play();
-    playBtn.style.display = "none";
+    video.play();
+    playBtn.style.display = "none";
 
-    video.ontimeupdate = function() {
-        let percent = (video.currentTime / video.duration) * 100;
-        document.getElementById("progressBar").style.width = percent + "%";
+    video.ontimeupdate = function() {
+        let percent = (video.currentTime / video.duration) * 100;
+        document.getElementById("progressBar").style.width = percent + "%";
 
-        if (percent > 35) {
-            document.getElementById("btnNext").style.display = "inline-block";
-        }
-    };
+        if (percent > 35) {
+            document.getElementById("btnNext").style.display = "inline-block";
+        }
+    };
 }
 
 function nextAd() {
-    window.open("https://injusticebakery.com/ky2ke53zw?key=f6a8bd8c5fa5e272c54364f2b859de84", "_blank");
+    window.open("https://injusticebakery.com/ky2ke53zw?key=f6a8bd8c5fa5e272c54364f2b859de84", "_blank");
 }
 </script>
 
